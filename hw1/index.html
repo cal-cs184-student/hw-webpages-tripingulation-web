@@ -40,11 +40,21 @@
 
 
         <!--
-        We've already added one heading per task, to make your write-up as navigable when grading. Please fit your write-up within these sections!
-        -->
+    We've already added one heading per task, to make your write-up as navigable when grading. Please fit your write-up within these sections!
+    -->
 
         <h2>Overview</h2>
-        TODO: Give a high-level overview of what you implemented in this homework. Think about what you've built as a whole. Share your thoughts on what interesting things you've learned from completing the homework.
+        <p>
+            In this homework we implemented a rasterizer that capable of multiple different sampling and anti-aliasing methods including supersampling,
+            bilinear and nearest-pixel texture mapping, and mipmapping. It uses barycentric coordinates to interpolate colors and texture coordinates
+            over the interior of a triangle. It can also handle hierarchical affine transforms. Overall our program can interpret svg files and display
+            them with a variety of different viewing parameters.
+        </p>
+        <p>
+            Some interesting things we learned include the tradeoffs between image quality and performance (speed and memory) that are common to all rasterizers.
+            It really put into perspective how impressive modern software, such as video games, truly are behind the scenes. We learned how to
+            debug complex programs: in particular, we found the minutiae of mipmapping to be especially subtle and require careful attention to detail.
+        </p>
 
         <h2>Task 1: Drawing Single-Color Triangles</h2>
         <p>
@@ -61,9 +71,9 @@
 
         </p>
         <!--% TODO: do the clock() shit for extra credit
-        % TODO I DID THE CLOCK SHIT AND ITS WORSE-->
+    % TODO I DID THE CLOCK SHIT AND ITS WORSE-->
         <p>
-            Optimizations: To make our triangle rasterizer faster, we avoided checking
+            To make our triangle rasterizer faster, we avoided checking
             every pixel in the bounding box: instead, each row we detect when we have
             entered and then exited the triangle; after this we know the remaining
             samples in the row cannot be in the triangle so there is no need to check them.
@@ -115,11 +125,11 @@
             Thus our brain interprets that the pixel is actually on the triangle edge.
         </p>
         <!--
-        Walk through your supersampling algorithm and data structures.
-        Why is supersampling useful?
-        What modifications did you make to the rasterization pipeline in the process?
-        Explain how you used supersampling to antialias your triangles.
-        WHAT DOES THAT QUESTION EVEN MEAN?-->
+    Walk through your supersampling algorithm and data structures.
+    Why is supersampling useful?
+    What modifications did you make to the rasterization pipeline in the process?
+    Explain how you used supersampling to antialias your triangles.
+    WHAT DOES THAT QUESTION EVEN MEAN?-->
 
         <div style="display: flex; flex-direction: column; align-items: center;">
             <table style="width: 100%; text-align: center; border-collapse: collapse;">
@@ -143,7 +153,7 @@
         </div>
 
         <!-- Compare basic/test4 with 1,4,16 sample rate
-        Explain why these results are observed.-->
+    Explain why these results are observed.-->
         <p>
             In the image with sample rate 1, every pixel is either solid red or solid white.
             There are clear aliasing artefacts visible as the presence of jaggies and floating/disconnected pixels.
@@ -213,10 +223,10 @@
 
         <h2>Task 5: "Pixel sampling" for texture mapping</h2>
         <!--Explain pixel sampling in your own words and describe
-        how you implemented it to perform texture mapping.
-        Briefly discuss the two different pixel sampling methods,
-        nearest and bilinear.
-        -->
+    how you implemented it to perform texture mapping.
+    Briefly discuss the two different pixel sampling methods,
+    nearest and bilinear.
+    -->
         <p>
             Pixel sampling is the method through which the final color of a pixel is chosen, based on
             taking sample(s) from the desired texture and possibly combining them.
@@ -231,41 +241,51 @@
         </p>
 
         <!--TODO:
-        Check out the svg files in the svg/texmap/ directory.
-        Use the pixel inspector to find a good example of where
-        bilinear sampling clearly defeats nearest sampling.
-        Show and compare four png screenshots using nearest
-        sampling at 1 sample per pixel, nearest sampling at
-        16 samples per pixel, bilinear sampling at 1 sample
-        per pixel, and bilinear sampling at 16 samples per pixel. -->
+    Check out the svg files in the svg/texmap/ directory.
+    Use the pixel inspector to find a good example of where
+    bilinear sampling clearly defeats nearest sampling.
+    Show and compare four png screenshots using nearest
+    sampling at 1 sample per pixel, nearest sampling at
+    16 samples per pixel, bilinear sampling at 1 sample
+    per pixel, and bilinear sampling at 16 samples per pixel. -->
+        This image is an original digital artwork by Trace.
+
+        <img src="images/custom1.png" width="300px" style="margin-left: auto; margin-right: auto; display: block;" />
+
+        Although this task didn't call for us to use an original png, while testing we found that this artwork was
+        a particularly good example of the impact of different types of pixel sampling, so elected to use it for this section.
+        We noticed its high-contrast, graphic style with a mix of large shapes and small details
+        shows the difference between bilinear and nearest-pixel sampling even more strikingly than the sample images.
+
+
 
         <div style="display: flex; flex-direction: column; align-items: center;">
             <table style="width: 100%; text-align: center; border-collapse: collapse;">
                 <tr>
                     <td style="text-align: center;">
-                        <img src="images/???.png" width="400px" />
-                        <figcaption>texmap/test1.png with nearest-pixel sampling at 1 sample per pixel.</figcaption>
+                        <img src="images/task5sample1nearest.png" width="400px" />
+                        <figcaption>My artwork with nearest-pixel sampling at 1 sample per pixel.</figcaption>
                     </td>
                     <td style="text-align: center;">
-                        <img src="images/???.png" width="400px" />
-                        <figcaption>texmap/test1.png with nearest-pixel sampling at 16 samples per pixel.</figcaption>
+                        <img src="images/task5sample1bilin.png" width="400px" />
+                        <figcaption>My artwork with nearest-pixel sampling at 16 samples per pixel.</figcaption>
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: center;">
-                        <img src="images/???.png" width="400px" />
-                        <figcaption>texmap/test1.png with bilinear sampling at 1 sample per pixel.</figcaption>
+                        <img src="images/task5sample16nearest.png" width="400px" />
+                        <figcaption>My artwork with bilinear sampling at 1 sample per pixel.</figcaption>
                     </td>
                     <td style="text-align: center;">
-                        <img src="images/???.png" width="400px" />
-                        <figcaption>texmap/test1.png with bilinear sampling at 16 samples per pixel.</figcaption>
+                        <img src="images/task5sample16bilin.png" width="400px" />
+                        <figcaption>My artwork with bilinear sampling at 16 samples per pixel.</figcaption>
                     </td>
                 </tr>
             </table>
         </div>
 
         <!--Comment on the relative differences. Discuss when there
-        will be a large difference between the two methods and why.-->
+    will be a large difference between the two methods and why.-->
 
         <p>
             There will be the largest difference for textures that are either highly minified or highly magnified,
@@ -338,15 +358,19 @@
             </table>
         </div>
 
+        There is a minor bug when sampling with the nearest mip level with bilinear sampling, causing artifacts to appear around the edges
+        of the image. We theorize that the bug occurs for particularly squashed/stretched triangles, however, we could not debug it
+        within a reasonable timeframe as the code behaved differently on each of our systems. 
+
         <!--Explain level sampling in your own words and describe
-        how you implemented it for texture mapping.
-        You can now adjust your sampling technique by selecting pixel sampling,
-        level sampling, or the number of samples per pixel.
-        Describe the tradeoffs between speed, memory usage, and antialiasing
-        power between the three various techniques.
-        Using a png file you find yourself, show us four versions of the image,
-        using the combinations of L_ZERO and P_NEAREST, L_ZERO and P_LINEAR,
-        L_NEAREST and P_NEAREST, as well as L_NEAREST and P_LINEAR.-->
+    how you implemented it for texture mapping.
+    You can now adjust your sampling technique by selecting pixel sampling,
+    level sampling, or the number of samples per pixel.
+    Describe the tradeoffs between speed, memory usage, and antialiasing
+    power between the three various techniques.
+    Using a png file you find yourself, show us four versions of the image,
+    using the combinations of L_ZERO and P_NEAREST, L_ZERO and P_LINEAR,
+    L_NEAREST and P_NEAREST, as well as L_NEAREST and P_LINEAR.-->
 
 
     </div>

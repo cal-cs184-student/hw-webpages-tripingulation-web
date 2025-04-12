@@ -81,10 +81,10 @@
 
 			<h2>Part 2: Simulation via numerical integration</h2>
 
-			<p> 
+			<p>
 				With a high \(k_s\), the cloth is very stiff and doesn't bend easily. When it hits the sphere, it jerks into a bent state but tries to keep parts straight.
 				<br>
-				With a very low \(k_s\), the cloth is very flexible. When it hits the sphere, it wraps around it and wiggles a bit. 
+				With a very low \(k_s\), the cloth is very flexible. When it hits the sphere, it wraps around it and wiggles a bit.
 				<br>
 				Compared to the default parameters, these stop moving more quickly and more slowly respectively.
 			</p>
@@ -92,13 +92,13 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part2_high_ks.png" alt="high ks" > 
+							<img src="images/part2_high_ks.png" alt="high ks">
 							<figcaption>The final resting state with a high \(k_s\).</figcaption>
 						</figure>
 					</td>
 					<td>
 						<figure>
-							<img src="images/part2_low_ks.png" alt="low ks"> 
+							<img src="images/part2_low_ks.png" alt="low ks">
 							<figcaption>The final resting state with a low \(k_s\).</figcaption>
 						</figure>
 					</td>
@@ -106,7 +106,7 @@
 				</tr>
 			</table>
 
-			<p> 
+			<p>
 				Density has the opposite effect as \(k_s\). With a high density, the cloth bends more and with a low density it does not bend. The effect compared to the default parameters is opposite as to \(k_s\).
 			</p>
 
@@ -114,50 +114,50 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part2_high_density.png" alt="high density" > 
+							<img src="images/part2_high_density.png" alt="high density">
 							<figcaption>The final resting state with a high density.</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part2_low_density.png" alt="low density" > 
+							<img src="images/part2_low_density.png" alt="low density">
 							<figcaption>The final resting state with a low density.</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 			</table>
 
-			<p> 
+			<p>
 				With high damping, the cloth comes to a rest slowly and is very symmetric, with no wiggling.
 				<br>
 				With low damping, the cloth bounces a lot and hits itself, coming to rest in an asymmetric position.
 				<br>
-				Compared to the default parameters, 
+				Compared to the default parameters,
 			</p>
 			<table>
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part2_high_damping.png" alt="high damping" > 
+							<img src="images/part2_high_damping.png" alt="high damping">
 							<figcaption>The final resting state with high damping.</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part2_low_damping.png" alt="low damping" > 
+							<img src="images/part2_low_damping.png" alt="low damping">
 							<figcaption>The final resting state with low damping.</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 			</table>
 
 			<p>Finally, here is a screenshot of our shaded cloth from scene/pinned4.json in its final resting state, with the default parameters.</p>
 			<figure>
-				<img src="images/part2_pinned4.png" alt="scene/pinned4.json" style="width:60%"> 
+				<img src="images/part2_pinned4.png" alt="scene/pinned4.json" style="width:60%">
 				<figcaption>scene/pinned4.json, default parameters</figcaption>
 			</figure>
 
@@ -196,7 +196,7 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part3_5000.png" alt="sphere with ks 5000"> 
+							<img src="images/part3_5000.png" alt="sphere with ks 5000">
 							<figcaption>scene/sphere.json, \(k_s = 5000\)</figcaption>
 						</figure>
 
@@ -204,27 +204,27 @@
 					<td>
 
 						<figure>
-							<img src="images/part3_500.png" alt="sphere with ks 500"style="width:60%" > 
+							<img src="images/part3_500.png" alt="sphere with ks 500" style="width:60%">
 							<figcaption>scene/sphere.json, \(k_s = 500\)</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 				<tr>
 					<td>
-			
+
 						<figure>
-							<img src="images/part3_50k.png" alt="sphere with ks 50000" > 
+							<img src="images/part3_50k.png" alt="sphere with ks 50000">
 							<figcaption>scene/sphere.json, \(k_s = 50000\)</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part3-shaded.png" alt="sphere shaded" style="width:70%"> 
+							<img src="images/part3-shaded.png" alt="sphere shaded" style="width:70%">
 							<figcaption>Shaded cloth lying on the plane.</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 			</table>
@@ -232,8 +232,8 @@
 
 			<h2>Part 4: Handling self-collisions</h2>
 			<p>
-				For Part 4, we implemented self-collisions using a spatial hash map containing PointMasses stored by their hashed position (build_spatial_map). Then we made the self_collide method to 
-				
+				For Part 4, we implemented self-collisions using a spatial hash map containing PointMasses stored by their hashed position (build_spatial_map). Then we made the self_collide method to
+
 			</p>
 			<pre>
 				build_spatial_map();
@@ -267,15 +267,15 @@
 				Here are 3 screenshots showing how the cloth falls and folds on itself.
 			</p>
 			<figure>
-				<img src="images/part4_early.png" alt="" style="width:60%"> 
+				<img src="images/part4_early.png" alt="" style="width:60%">
 				<figcaption>Early collision</figcaption>
 			</figure>
 			<figure>
-				<img src="images/part4_mid.png" alt="" style="width:60%"> 
+				<img src="images/part4_mid.png" alt="" style="width:60%">
 				<figcaption>Middle of the collision</figcaption>
 			</figure>
 			<figure>
-				<img src="images/part4_late.png" alt="" style="width:60%"> 
+				<img src="images/part4_late.png" alt="" style="width:60%">
 				<figcaption>Towards the end</figcaption>
 			</figure>
 
@@ -287,33 +287,33 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part4_low_ks_early.png" alt="" > 
+							<img src="images/part4_low_ks_early.png" alt="">
 							<figcaption>Low \(k_s\), early</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part4_lowks_late.png" alt="" > 
+							<img src="images/part4_lowks_late.png" alt="">
 							<figcaption>Low \(k_s\), late</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part4_high_ks_early.png" alt="" > 
+							<img src="images/part4_high_ks_early.png" alt="">
 							<figcaption>High \(k_s\), early</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part4_high_ks_late.png" alt="" > 
+							<img src="images/part4_high_ks_late.png" alt="">
 							<figcaption>High \(k_s\), late</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 			</table>
@@ -325,17 +325,17 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part4_low_density.png" alt="" > 
+							<img src="images/part4_low_density.png" alt="">
 							<figcaption>Low density</figcaption>
 						</figure>
 
 					</td>
 					<td>
 						<figure>
-							<img src="images/part4_high_density.png" alt="" > 
+							<img src="images/part4_high_density.png" alt="">
 							<figcaption>High density</figcaption>
 						</figure>
-						
+
 					</td>
 				</tr>
 			</table>
@@ -345,25 +345,25 @@
 			<p>
 				A shader program is a set of instructions written in a shading language like GLSL, which runs on the GPU to control rendering in a way that gets objects colored, usually in a realistic manner.
 				<br>
-				The vertex shader processes each vertex of a 3D model, transforming its position into screen space and computing attributes like normals and texture coordinates needed for lighting calculations. 
+				The vertex shader processes each vertex of a 3D model, transforming its position into screen space and computing attributes like normals and texture coordinates needed for lighting calculations.
 				<br>
 				The fragment shader takes in these attributes, and operates on each pixel or fragment of the shape. It uses this data to compute the final pixel color, taking into account lighting models such as Blinn-Phong, textures, and material properties.
 			</p>
 			<p>
-				The Blinn-Phong model adds up three lighting components: diffuse, specular, and ambient. Ambient light simulates indirect lighting; diffuse light depends on the angle between the light direction and the surface normal, giving a matte appearance; and specular light simulates shiny highlights. Blinn-Phong uses a *halfway vector*, the normalized vector halfway between the light direction and the view direction, to compute the specular term. This makes it visually smooth while staying efficient, especially for surfaces with many small highlights.
+				The Blinn-Phong model adds up three lighting components: diffuse, specular, and ambient. Ambient light simulates indirect lighting; diffuse light depends on the angle between the light direction and the surface normal, giving a matte appearance; and specular light simulates shiny highlights. Blinn-Phong uses a *halfway vector*, the normalized vector halfway between the light direction and the view direction, to compute the specular term. This makes it visually smooth while staying efficient, especially for surfaces with many small highlights. We chose a blue color for the ambient light to add some visual interest.
 			</p>
-			
+
 			<table>
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part5_bp_ambient.png" > 
+							<img src="images/part5_bp_ambient.png">
 							<figcaption>Blinn-Phong, ambient only</figcaption>
 						</figure>
 					</td>
 					<td>
 						<figure>
-							<img src="images/part5_bp_diffuse.png" > 
+							<img src="images/part5_bp_diffuse.png">
 							<figcaption>Blinn-Phong, diffuse only</figcaption>
 						</figure>
 					</td>
@@ -371,24 +371,33 @@
 				<tr>
 					<td>
 						<figure>
-							<img src="images/part5_bp_specular.png" > 
+							<img src="images/part5_bp_specular.png">
 							<figcaption>Blinn-Phong, specular only</figcaption>
 						</figure>
 					</td>
 					<td>
 						<figure>
-							<img src="images/part5_bp_total.png" > 
+							<img src="images/part5_bp_total.png">
 							<figcaption>Blinn-Phong, total</figcaption>
 						</figure>
 					</td>
 				</tr>
 			</table>
 
+			<p>
+				Our Blinn-Phong shader also supports user color input through the GUI.
+			</p>
+
+			<figure>
+				<img src="images/part5_color.png" alt="" style="width:60%">
+				<figcaption>Blinn-Phong, colored</figcaption>
+			</figure>
+
 			<p>Here is a custom texture:</p>
 			<table>
 				<tr>
 					<td>
-						<img src="images/part5_custom_pre.png" alt="" style="width: 60%;"> 
+						<img src="images/part5_custom_pre.png" alt="" style="width: 60%;">
 					</td>
 					<td>
 						<img src="images/part5_custom_texture.png" alt="">
@@ -396,29 +405,24 @@
 				</tr>
 			</table>
 
-			<p>Here is the GUI with custom colored Blinn-Phong:</p>
-			<figure>
-				<img src="images/part5_color.png" alt="" style="width:60%"> 
-				<figcaption>Blinn-Phong, colored</figcaption>
-			</figure>
 
 			<p>
-				Here is bump and displacement mapping. 
+				Here is bump and displacement mapping.
 				<br>
 				Bump mapping alters the surface normals at each pixel without changing the actual geometry of the surface. This means that the object’s shape is not modified, but lighting is affected, giving the illusion of depth and texture.
 				<br>
 				In constrast, displacement mapping does actually modify the vertices of the surface based on a displacement map, which results in real physical changes to the surface. It therefore produces more realistic depth effects but is computationally more expensive than bump mapping.
 				<br>
-				We see here in the resulting renders that the displacement rendering is more physically altered than bump mapping, at both rendering resolutions. However, at the lower resulotion, displacement mapping is less smooth and more jagged, since there are less vertex normals so modifying them has a less subtle effect.
+				We see here in the resulting renders that the displacement rendering is more physically altered than bump mapping, at both rendering resolutions. However, at the lower resolution, displacement mapping is less smooth and more jagged, since there are less vertex normals so modifying them has a less subtle effect.
 			</p>
-			
+
 			<table>
 				<tr>
 					<td>
-						<img src="images/part5_bump128_pre.png" alt="" style="width:50%"> 
+						<img src="images/part5_bump128_pre.png" alt="" style="width:50%">
 					</td>
 					<td>
-						<img src="images/part5_bump128.png" alt=""> 
+						<img src="images/part5_bump128.png" alt="">
 					</td>
 				</tr>
 				<tr>
@@ -430,10 +434,10 @@
 				</tr>
 				<tr>
 					<td>
-						<img src="images/part5_bump16_pre.png" alt="" style="width:50%"> 
+						<img src="images/part5_bump16_pre.png" alt="" style="width:50%">
 					</td>
 					<td>
-						<img src="images/part5_bump16.png" alt=""> 
+						<img src="images/part5_bump16.png" alt="">
 					</td>
 				</tr>
 				<tr>
@@ -445,10 +449,10 @@
 				</tr>
 				<tr>
 					<td>
-						<img src="images/part5_disp128_pre.png" alt="" style="width:50%"> 
+						<img src="images/part5_disp128_pre.png" alt="" style="width:50%">
 					</td>
 					<td>
-						<img src="images/part5_disp128.png" alt=""> 
+						<img src="images/part5_disp128.png" alt="">
 					</td>
 				</tr>
 				<tr>
@@ -460,10 +464,10 @@
 				</tr>
 				<tr>
 					<td>
-						<img src="images/part5_disp16_pre.png" alt="" style="width:50%"> 
+						<img src="images/part5_disp16_pre.png" alt="" style="width:50%">
 					</td>
 					<td>
-						<img src="images/part5_disp16.png" alt=""> 
+						<img src="images/part5_disp16.png" alt="">
 					</td>
 				</tr>
 				<tr>
@@ -479,15 +483,69 @@
 			<table>
 				<tr>
 					<td>
-						<img src="images/part5_mirror_pre.png" alt="" style="width:60%"> 
+						<img src="images/part5_mirror_pre.png" alt="" style="width:60%">
 					</td>
 					<td>
-						<img src="images/part5_mirror.png" >
+						<img src="images/part5_mirror.png">
 					</td>
 				</tr>
 			</table>
 
-			</div>
+			<h3>Custom shader</h3>
+			<p>
+				For our custom shader we created a toon shader that interpolates colors in a perceptually uniform way. The light color can be chosen through the GUI and the shadow color can be chosen by inputting numbers into the normal and height fields of the GUI (e.g. inputting <code>12.34, 0.56</code>) will choose the RGB colour (0.12, 0.34, 0.56).
+			</p>
+
+			<p>
+				We achieved this by first converting the sRGB color to the perceptually uniform color space OKLab. Then, we linearly interpolated in OKLab coordinates to obtain 3 in-between shades which transition between the two chosen colors in a perceptually uniform way. Finally we convert back to RGB for display on the screen. By doing these gradients in OKLab color space, the color transitions look smooth and natural even when interpolating between pairs of colors which do not easily mix, such as complimentary colors and highly saturated colors of different hues.
+			</p>
+			<p>
+				To achieve a toon shader effect, we calculated light intensity with a dot product similar to in Blinn-Phong shading, then sorted it into five buckets based on this value. We chose to make the cutoff boundaries clustered around central light intensity values, rather than spreading them out evenly, as this created a more artsy, stylized look than using even bands, which looks a bit artificial.
+			</p>
+
+			<table>
+				<tr>
+					<td>
+						<img src="images/pt5_customshader_1.png" alt="" style="width:80%">
+					</td>
+					<td>
+						<img src="images/pt5_customshader_2.png" alt="" style="width:80%">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="images/pt5_customshader_3.png" alt="" style="width:80%">
+					</td>
+					<td>
+						<img src="images/pt5_customshader_4.png" alt="" style="width:80%">
+					</td>
+				</tr>
+			</table>
+
+			<p>
+				The below images show how the shader interpolates between clashing colors.
+			</p>
+
+			<table>
+				<tr>
+					<td>
+						<img src="images/pt5_customshader_5.png" alt="" style="width:80%">
+					</td>
+					<td>
+						<img src="images/pt5_customshader_6.png" alt="" style="width:80%">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="images/pt5_customshader_7.png" alt="" style="width:80%">
+					</td>
+					<td>
+						<img src="images/pt5_customshader_8.png" alt="" style="width:80%">
+					</td>
+				</tr>
+			</table>
+
+		</div>
 		</div>
 	</body>
 </html>
